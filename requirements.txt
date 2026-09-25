@@ -1,0 +1,4 @@
+flask
+flask-session
+boto3
+python-dotenv

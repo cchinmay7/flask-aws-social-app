@@ -1,4 +1,4 @@
-# CS488 Final Project
+# Flask AWS Social App
 
 A full-stack social media web application built with **Flask**, **JavaScript**, and **AWS** services including **DynamoDB** and **S3**. The project supports user authentication, profile pages, posting, replies, a personalized feed, and profile photo uploads.
 
@@ -48,8 +48,9 @@ The backend is implemented in Python using Flask, while the frontend uses HTML t
 
 ## Project Structure
 
-```text name=project-structure.txt
-cs488-final-project/
+```text
+flask-aws-social-app/
+├── requirements.txt      # Python dependencies
 ├── aws.py                # AWS and data access layer
 ├── flask_app.py          # Flask routes and app logic
 ├── static/
@@ -124,35 +125,35 @@ Expected fields:
 
 ### 1. Clone the repository
 
-```bash name=clone.sh
-git clone https://github.com/cchinmay7/cs488-final-project.git
-cd cs488-final-project
+```bash
+git clone https://github.com/cchinmay7/flask-aws-social-app.git
+cd flask-aws-social-app
 ```
 
 ### 2. Create and activate a virtual environment
 
-```bash name=venv.sh
+```bash
 python -m venv venv
 source venv/bin/activate
 ```
 
 On Windows:
 
-```bash name=venv-windows.sh
+```bash
 venv\Scripts\activate
 ```
 
 ### 3. Install dependencies
 
-```bash name=install.sh
-pip install flask flask-session boto3 python-dotenv
+```bash
+pip install -r requirements.txt
 ```
 
 ### 4. Configure environment variables
 
 Create a `.env` file in the project root:
 
-```env name=.env.example
+```env
 AWS_ACCESS_KEY=your_aws_access_key
 AWS_SECRET_KEY=your_aws_secret_key
 ```
@@ -166,13 +167,13 @@ You should also ensure the following AWS resources exist:
 
 ### 5. Run the Flask application
 
-```bash name=run.sh
+```bash
 python flask_app.py
 ```
 
 If needed, set the Flask entry point explicitly:
 
-```bash name=run-flask.sh
+```bash
 export FLASK_APP=flask_app.py
 flask run
 ```
@@ -201,11 +202,3 @@ flask run
 - Pagination for posts and replies
 - Better DynamoDB indexing and query patterns
 - Deployment with environment-specific configuration
-
-## License
-
-No license has been specified for this repository.
-
-## Author
-
-Created by **cchinmay7** as a CS488 final project.
